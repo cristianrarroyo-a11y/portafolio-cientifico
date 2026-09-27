@@ -1,0 +1,130 @@
+/* 1. Base: estas reglas afectan a toda la página. */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #183b49;
+  background-color: #f5f8fa;
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 0.25em;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* El contorno permite ver qué enlace está seleccionado con el teclado. */
+a:focus-visible {
+  outline: 3px solid #b34b00;
+  outline-offset: 5px;
+}
+
+h1, h2, h3 {
+  line-height: 1.15;
+  margin: 0 0 1rem;
+}
+
+h1, h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: normal;
+}
+
+h1 { font-size: 3.5rem; }
+h2 { font-size: 2.25rem; }
+h3 { font-size: 1.4rem; }
+p { margin: 0 0 1rem; }
+
+/* Una clase se reutiliza: centra el contenido y limita su ancho. */
+.contenedor {
+  width: 90%;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+/* 2. Cabecera: Flexbox coloca sus elementos en una fila flexible. */
+.cabecera, nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.cabecera { padding: 1.5rem 0; }
+.cabecera a { text-decoration: none; }
+.cabecera a:hover { text-decoration: underline; }
+.nombre { font-size: 1.15rem; font-weight: bold; }
+.nombre span { display: block; font-size: 0.875rem; font-weight: normal; }
+
+/* 3. Portada: el contraste separa la introducción del resto del contenido. */
+.portada {
+  padding: 4.5rem 0;
+  background-color: #0e3545;
+  color: #ffffff;
+  border-bottom: 6px solid #7be0d6;
+}
+
+.etiqueta, .categoria {
+  font-size: 0.875rem;
+  font-weight: bold;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.portada .etiqueta { color: #7be0d6; }
+.introduccion { max-width: 580px; font-size: 1.125rem; margin-bottom: 2rem; }
+.boton {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  background-color: #7be0d6;
+  color: #0e3545;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+/* 4. Secciones y proyectos: Grid organiza el contenido en columnas. */
+.seccion { padding: 3.5rem 0; }
+.presentacion {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  border-bottom: 1px solid #c6d4dc;
+}
+.presentacion p:last-child { margin-bottom: 0; }
+.nota { max-width: 680px; color: #465f6d; margin-bottom: 2rem; }
+.proyectos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+.proyecto {
+  padding: 1.75rem;
+  background-color: #ffffff;
+  border: 1px solid #c6d4dc;
+  border-top: 3px solid #147c80;
+}
+.categoria { color: #22656c; }
+.estado { color: #465f6d; font-size: 0.875rem; margin: 1.5rem 0 0; }
+.pie { padding: 1.5rem 0; border-top: 1px solid #c6d4dc; font-size: 0.875rem; }
+
+/* Enlace de accesibilidad: aparece al presionar Tab. */
+.saltar { position: absolute; left: 1rem; top: -100px; }
+.saltar:focus { top: 1rem; padding: 0.75rem; background: white; color: #183b49; }
+
+/* 5. En pantallas estrechas, las columnas pasan a ser una sola. */
+@media (max-width: 700px) {
+  h1 { font-size: 2.5rem; }
+  .portada { padding: 3rem 0; }
+  .seccion { padding: 2.5rem 0; }
+  .presentacion, .proyectos { grid-template-columns: 1fr; }
+  .presentacion { gap: 0.5rem; }
+}
