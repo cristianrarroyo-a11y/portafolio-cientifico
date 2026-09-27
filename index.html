@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Información para el navegador: no aparece como contenido de la página. -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portafolio de un estudiante universitario: oceanografía, percepción remota, acústica submarina y análisis espacial.">
+  <title>Cristian R. Arroyo | Portafolio científico</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230e3545'/%3E%3Cpath d='M6 12h20M6 20h14' stroke='%237be0d6' stroke-width='3'/%3E%3C/svg%3E">
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <!-- La cabecera identifica el sitio y permite moverse entre secciones. -->
+  <header class="cabecera contenedor">
+    <!-- Sustituye «Tu nombre» aquí y en <title>. -->
+    <a class="nombre" href="#inicio">Cristian R. Arroyo <span>Portafolio científico</span></a>
+    <nav aria-label="Navegación principal">
+      <a href="#inicio">Inicio</a>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#proyectos">Proyectos</a>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <!-- Una sola portada y un solo h1: el título principal de esta página. -->
+    <section class="portada" id="inicio" aria-labelledby="titulo">
+      <div class="contenedor">
+        <p class="etiqueta">Ciencia · Océano · Datos</p>
+        <h1 id="titulo">Explorar el océano.<br>Aprender de los datos.</h1>
+        <p class="introduccion">Un espacio para compartir mis proyectos universitarios y construir mi camino en la investigación.</p>
+        <a class="boton" href="#proyectos">Explorar proyectos <span aria-hidden="true">↓</span></a>
+      </div>
+    </section>
+
+    <div class="contenedor">
+      <section class="seccion presentacion" id="sobre-mi" aria-labelledby="titulo-sobre-mi">
+        <div>
+          <p class="etiqueta">Presentación</p>
+          <h2 id="titulo-sobre-mi">Sobre mí</h2>
+        </div>
+        <!-- Este párrafo es un borrador: reescríbelo con tu propia voz. -->
+        <p>Soy estudiante universitario y me interesa comprender el medio marino a través de la oceanografía, la acústica y el análisis de datos. En este espacio iré documentando mis proyectos, sus métodos y lo que aprendo durante el proceso.</p>
+      </section>
+
+      <section class="seccion" id="proyectos" aria-labelledby="titulo-proyectos">
+        <p class="etiqueta">Líneas de trabajo</p>
+        <h2 id="titulo-proyectos">Proyectos destacados</h2>
+        <p class="nota">Estos son los primeros trabajos que documentaré aquí. Sus métodos y resultados se incorporarán en próximas versiones.</p>
+
+        <!-- Cada article agrupa un proyecto. Por ahora son resúmenes, sin páginas propias. -->
+        <div class="proyectos">
+          <article class="proyecto">
+            <p class="categoria">01 / Oceanografía Física</p>
+            <h3>Corrientes a 40 m</h3>
+            <p>Análisis de corrientes subsuperficiales a 40 metros de profundidad.</p>
+            <p class="estado">Ficha del proyecto por incorporar</p>
+          </article>
+
+          <article class="proyecto">
+            <p class="categoria">02 / Percepción Remota y SIG</p>
+            <h3>Tecnología a bordo</h3>
+            <p>Estudio de tecnologías y equipos en 12 embarcaciones artesanales.</p>
+            <p class="estado">Ficha del proyecto por incorporar</p>
+          </article>
+
+          <article class="proyecto">
+            <p class="categoria">03 / Acústica Submarina</p>
+            <h3>Organismos acuáticos y sonido</h3>
+            <p>Revisión sistemática sobre la respuesta de los organismos acuáticos al sonido.</p>
+            <p class="estado">Ficha del proyecto por incorporar</p>
+          </article>
+
+          <article class="proyecto">
+            <p class="categoria">04 / Análisis espacial</p>
+            <h3>Distribución del krill</h3>
+            <p>Análisis espacial de krill mediante interpolación Kriging en Surfer.</p>
+            <p class="estado">Ficha del proyecto por incorporar</p>
+          </article>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="pie contenedor">
+    <p>Portafolio académico · Primera versión</p>
+    <a href="#inicio">Volver al inicio ↑</a>
+  </footer>
+</body>
+</html>
