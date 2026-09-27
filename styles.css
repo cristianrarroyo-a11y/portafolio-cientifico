@@ -120,6 +120,23 @@ p { margin: 0 0 1rem; }
 .saltar { position: absolute; left: 1rem; top: -100px; }
 .saltar:focus { top: 1rem; padding: 0.75rem; background: white; color: #183b49; }
 
+/* Página de proyecto: reutiliza la base y añade figuras y una tabla. */
+.detalle-proyecto { max-width: 900px; }
+.detalle-proyecto .seccion { border-bottom: 1px solid #c6d4dc; }
+.portada-proyecto { padding: 3rem 0; }
+.figura-proyecto { margin: 2rem 0; }
+.figura-proyecto img { display: block; width: 100%; height: auto; background: white; }
+.figura-recorrido img { max-width: 457px; margin: 0 auto; }
+figcaption, caption { font-size: 0.875rem; color: #465f6d; text-align: left; padding: 0.75rem 0; }
+.tabla-desplazable { overflow-x: auto; margin: 1.5rem 0; }
+table { width: 100%; border-collapse: collapse; background: white; }
+th, td { text-align: left; padding: 0.65rem 1rem; border-bottom: 1px solid #c6d4dc; }
+thead { background: #0e3545; color: white; }
+.pasos-proyecto { padding-left: 1.5rem; }
+.pasos-proyecto li { margin-bottom: 1rem; }
+.nota-metodologica { padding: 1rem; border-left: 3px solid #147c80; background: #e9f1f4; }
+code { overflow-wrap: anywhere; }
+
 /* 5. En pantallas estrechas, las columnas pasan a ser una sola. */
 @media (max-width: 700px) {
   h1 { font-size: 2.5rem; }

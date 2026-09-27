@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Proyecto universitario de Cristian R. Arroyo: interpolación y representación espacial del NASC de krill en aguas antárticas con Surfer.">
+  <title>NASC de krill en aguas antárticas | Cristian R. Arroyo</title>
+  <!-- ../ sube una carpeta: reutilizamos los estilos de la portada. -->
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230e3545'/%3E%3Cpath d='M6 12h20M6 20h14' stroke='%237be0d6' stroke-width='3'/%3E%3C/svg%3E">
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+  <header class="cabecera contenedor">
+    <a class="nombre" href="../index.html">Cristian R. Arroyo<span>Portafolio científico</span></a>
+    <nav aria-label="Navegación principal">
+      <a href="../index.html">Inicio</a>
+      <a href="../index.html#sobre-mi">Sobre mí</a>
+      <a href="../index.html#proyectos">Proyectos</a>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <section class="portada portada-proyecto" aria-labelledby="titulo">
+      <div class="contenedor">
+        <p class="etiqueta">Análisis espacial · Surfer · Kriging</p>
+        <h1 id="titulo">NASC de krill<br>en aguas antárticas</h1>
+        <p class="introduccion">De los registros de un muestreo acústico a un mapa de su distribución espacial.</p>
+        <p>Trabajo universitario · <time datetime="2026-09-22">22 de septiembre de 2026</time></p>
+      </div>
+    </section>
+
+    <article class="contenedor detalle-proyecto">
+      <section class="seccion" aria-labelledby="objetivo">
+        <p class="etiqueta">01 / Objetivo</p>
+        <h2 id="objetivo">Representar la variación espacial</h2>
+        <p>El objetivo del trabajo fue transformar registros de posición geográfica y NASC de un muestreo acústico en una superficie interpolada, para visualizar patrones de agregación en el área de estudio antártica.</p>
+        <p>El NASC se expresa aquí en m² nmi⁻² y describe la señal acústica integrada. En este proyecto no se convierte en captura ni en biomasa directa.</p>
+      </section>
+
+      <figure class="figura-proyecto">
+        <a href="../imagenes/krill/mapa-nasc.png" aria-label="Abrir el mapa de NASC en su tamaño original">
+          <img src="../imagenes/krill/mapa-nasc.png" width="943" height="623" alt="Mapa de NASC al norte de la Península Antártica, con valores heterogéneos sobre las transectas, escala de colores y estadísticos de 492 observaciones.">
+        </a>
+        <figcaption>Mapa de distribución espacial del NASC. Figura 2 del informe original. Selecciona la imagen para verla en su tamaño original.</figcaption>
+      </figure>
+
+      <section class="seccion" aria-labelledby="datos">
+        <p class="etiqueta">02 / Datos</p>
+        <h2 id="datos">492 observaciones originales</h2>
+        <p>El informe describe una bitácora en <code>krill.xlsx</code> con longitud (<code>Lon_M</code>), latitud (<code>Lat_M</code>) y NASC. Los estadísticos siguientes proceden del informe; no se han recalculado a partir de la hoja original.</p>
+        <div class="tabla-desplazable">
+          <table>
+            <caption>Estadísticos de las observaciones originales. NASC en m² nmi⁻²; valores redondeados.</caption>
+            <thead><tr><th scope="col">Estadístico</th><th scope="col">Valor</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Observaciones</th><td>492</td></tr>
+              <tr><th scope="row">Mínimo</th><td>0</td></tr>
+              <tr><th scope="row">Máximo</th><td>7094,11</td></tr>
+              <tr><th scope="row">Promedio</th><td>586,61</td></tr>
+              <tr><th scope="row">Mediana</th><td>119,81</td></tr>
+              <tr><th scope="row">Desviación estándar</th><td>1054,11</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>El promedio supera ampliamente la mediana: predominan los valores bajos y un número reducido de observaciones alcanza valores altos.</p>
+      </section>
+
+      <section class="seccion" aria-labelledby="metodo">
+        <p class="etiqueta">03 / Metodología</p>
+        <h2 id="metodo">Del recorrido al mapa</h2>
+        <ol class="pasos-proyecto">
+          <li><strong>Representar el recorrido.</strong> Las coordenadas se utilizaron en su orden original para generar una polilínea de 492 vértices y superponerla a la cartografía antártica.</li>
+          <li><strong>Preparar la interpolación.</strong> A las 492 observaciones se añadieron 377 puntos de delimitación con NASC = 0. El conjunto de entrada tuvo 869 puntos; los ceros añadidos son una decisión de modelado, no nuevas mediciones.</li>
+          <li><strong>Interpolar en Surfer.</strong> Se utilizó Point Kriging con orden de deriva polinomial 0. El dominio se restringió aproximadamente a longitudes −57,88° a −53,18° y latitudes −61,65° a −60,14°.</li>
+          <li><strong>Elegir una escala legible.</strong> Se emplearon intervalos crecientes —1, 100, 250, 500, 750, 1000, 1500, 2000, 3000, 4000 y 5000— para distinguir valores bajos e intermedios y los núcleos de mayor NASC.</li>
+          <li><strong>Integrar la cartografía.</strong> El mapa se incorporó a una plantilla con la Península Antártica y las Islas Shetland del Sur como contexto regional.</li>
+        </ol>
+        <p class="nota-metodologica"><strong>Nota sobre la grilla:</strong> el informe indica 100 × 34 nodos; el archivo <code>krill.grd</code> entregado contiene 100 columnas y 33 filas. Esta diferencia entre versiones queda pendiente de aclaración.</p>
+      </section>
+
+      <figure class="figura-proyecto figura-recorrido">
+        <a href="../imagenes/krill/recorrido.png" aria-label="Abrir la imagen original del recorrido">
+          <img src="../imagenes/krill/recorrido.png" width="457" height="392" loading="lazy" alt="Recorrido del muestreo en transectas al norte de las Islas Shetland del Sur, sobre la cartografía de la Península Antártica.">
+        </a>
+        <figcaption>Recorrido del muestreo acústico. Figura 3 del informe original.</figcaption>
+      </figure>
+
+      <section class="seccion" aria-labelledby="resultados">
+        <p class="etiqueta">04 / Resultados e interpretación</p>
+        <h2 id="resultados">Una distribución heterogénea</h2>
+        <p>Según la interpretación del informe, los núcleos de mayor NASC se concentran principalmente en el sector occidental, aproximadamente entre 57,5° O y 55,5° O. Hacia los extremos de las transectas y el sector oriental, cercano a 54° O–53° O, predominan valores bajos.</p>
+        <p>El trabajo muestra cómo la extensión de la grilla y la clasificación de colores influyen en la lectura del resultado. La superficie permite explorar la distribución de la señal acústica en el área analizada.</p>
+      </section>
+
+      <section class="seccion" aria-labelledby="limites">
+        <p class="etiqueta">05 / Alcance</p>
+        <h2 id="limites">Cómo interpretar este resultado</h2>
+        <ul class="pasos-proyecto">
+          <li>La superficie es una interpolación: no todos sus nodos son lugares donde se tomaron observaciones.</li>
+          <li>Los puntos de delimitación con valor cero condicionan el resultado; no demuestran ausencia de krill en esas posiciones.</li>
+          <li>El informe no presenta validación cruzada ni un mapa de incertidumbre. Por tanto, esta página no atribuye una precisión cuantificada a la interpolación.</li>
+          <li>Los mapas se reproducen tal como aparecen en el informe. El análisis corresponde al área y al conjunto descritos, no a toda la distribución antártica del krill.</li>
+        </ul>
+      </section>
+
+      <section class="seccion creditos-proyecto" aria-labelledby="creditos">
+        <h2 id="creditos">Créditos y fuente</h2>
+        <p><a class="boton" href="../documentos/informe-krill-publico.pdf" download>Descargar el informe completo (PDF)</a></p>
+        <p class="nota">Copia de publicación con el código de matrícula ocultado. Conserva el contenido académico y las figuras del informe original.</p>
+        <p><strong>Autor:</strong> Cristian Rafael Huamani Arroyo.<br><strong>Institución:</strong> Universidad Nacional Federico Villarreal, Facultad de Pesquería.<br><strong>Docente:</strong> Prof. Federico Iriarte.</p>
+        <p>Contenido adaptado del <cite>Informe Técnico — Aplicación de Surfer en la interpolación y representación espacial del NASC de krill</cite>, de 22 de septiembre de 2026. Mapas extraídos del informe del autor. La fuente de datos se identifica en ese documento como <code>krill.xlsx</code>; la campaña no se detalla allí.</p>
+      </section>
+    </article>
+  </main>
+  <footer class="pie contenedor"><a href="../index.html#proyectos">← Volver a los proyectos</a></footer>
+</body>
+</html>
