@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Análisis de corrientes superficiales y a 40 m en la ZEE peruana durante agosto de 2026. Artículo y presentación de Cristian R. Arroyo.">
+  <title>Corrientes a 40 m | Cristian R. Arroyo</title>
+  <!-- ../ sube una carpeta: reutilizamos los estilos de la portada. -->
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230e3545'/%3E%3Cpath d='M6 12h20M6 20h14' stroke='%237be0d6' stroke-width='3'/%3E%3C/svg%3E">
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+  <header class="cabecera contenedor">
+    <a class="nombre" href="../index.html">Cristian R. Arroyo<span>Portafolio científico</span></a>
+    <nav aria-label="Navegación principal">
+      <a href="../index.html">Inicio</a>
+      <a href="../index.html#sobre-mi">Sobre mí</a>
+      <a href="../index.html#proyectos">Proyectos</a>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <section class="portada portada-proyecto" aria-labelledby="titulo">
+      <div class="contenedor">
+        <p class="etiqueta">Oceanografía Física · Copernicus Marine</p>
+        <h1 id="titulo">Corrientes a 40 m</h1>
+        <p class="introduccion">El viento y la diferencia entre las corrientes superficiales y subsuperficiales en la ZEE peruana.</p>
+        <p>Periodo analizado: 17–30 de agosto de 2026 · Trabajo académico</p>
+        <a class="boton" href="#documentos">Artículo y presentación ↓</a>
+      </div>
+    </section>
+    <article class="contenedor detalle-proyecto">
+      <!-- ../ sube desde proyectos hasta la carpeta principal del sitio. -->
+      <section class="seccion" id="documentos" aria-labelledby="titulo-documentos">
+        <p class="etiqueta">Documentos del trabajo</p>
+        <h2 id="titulo-documentos">Leer el artículo y la presentación</h2>
+        <ul>
+          <li><a href="../documentos/oceanografia/articulo-corrientes-40m.docx" download>Descargar artículo completo (Word, DOCX · 2,19 MB)</a></li>
+          <li><a href="../documentos/oceanografia/presentacion-corrientes-40m.pptx" download>Descargar presentación (PowerPoint, PPTX · 1,18 MB)</a></li>
+        </ul>
+        <p>Archivos originales del autor, con metodología, resultados, figuras y referencias. Las cifras de esta página proceden de esos documentos; no se recalcularon los datos originales para preparar el portafolio.</p>
+      </section>
+      <section class="seccion" aria-labelledby="pregunta">
+        <p class="etiqueta">01 / Pregunta de investigación</p>
+        <h2 id="pregunta">¿Se mueve igual el océano en superficie y a 40 m?</h2>
+        <p>El trabajo analiza cómo se relacionó el esfuerzo del viento con la diferencia entre las corrientes de superficie y de 40 m dentro de la Zona Económica Exclusiva (ZEE) peruana durante 14 días. Considera también la capa de mezcla, la circulación geostrófica y las señales costeras del nivel del mar.</p>
+        <p>Los niveles exactos del modelo son <strong>0,494 m y 40,344 m</strong>. «40 m» es una forma abreviada de nombrar el segundo nivel; no representa una frontera física fija en el océano.</p>
+      </section>
+      <section class="seccion" aria-labelledby="metodo">
+        <p class="etiqueta">02 / Datos y metodología</p>
+        <h2 id="metodo">Comparar dos niveles de la columna de agua</h2>
+        <ol class="pasos-proyecto">
+          <li><strong>Reunir los datos.</strong> Corrientes, temperatura, salinidad y nivel del mar del sistema de análisis y pronóstico de Copernicus Marine, con resolución de 1/12°. Esfuerzo del viento horario con resolución de 0,125°.</li>
+          <li><strong>Delimitar y preparar.</strong> Reconstrucción geométrica aproximada de la ZEE, dividida en norte, centro y sur. Se analizaron 10 194 celdas oceánicas con datos en ambos niveles y se ponderaron los promedios espaciales por el coseno de la latitud.</li>
+          <li><strong>Medir la diferencia.</strong> Se calculó por celda y día la magnitud de la diferencia vectorial entre las dos corrientes, denominada D, antes de promediarla en el espacio.</li>
+          <li><strong>Examinar posibles mecanismos.</strong> Se estimó la profundidad de la capa de mezcla mediante un umbral de densidad y la componente geostrófica a partir del nivel del mar. También se exploraron señales costeras propagantes.</li>
+          <li><strong>Evaluar la robustez.</strong> Se consideró la dependencia entre días consecutivos mediante tamaño efectivo de muestra, pruebas de Ebisuzaki, bootstrap por bloques y análisis de sensibilidad.</li>
+        </ol>
+        <p class="nota-metodologica"><strong>Qué mide D:</strong> cuánto difieren las corrientes en rapidez y dirección, en m/s. Dos corrientes igual de rápidas pero orientadas en sentidos opuestos tienen una diferencia grande. D no mide por sí sola el efecto del viento ni la respuesta a 40 m.</p>
+      </section>
+      <section class="seccion" aria-labelledby="resultados">
+        <p class="etiqueta">03 / Resultados del trabajo</p>
+        <h2 id="resultados">El viento acompañó a la diferenciación vertical</h2>
+        <div class="tabla-desplazable">
+          <table>
+            <caption>Correlaciones reportadas para la ventana del 17 al 30 de agosto de 2026. r describe asociación lineal, no causalidad.</caption>
+            <thead><tr><th scope="col">Comparación</th><th scope="col">r</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Esfuerzo del viento y diferencia D, conjunto de la ZEE</th><td>0,917</td></tr>
+              <tr><th scope="row">Esfuerzo del viento y rapidez a 40,34 m, mismo día</th><td>0,12</td></tr>
+              <tr><th scope="row">Esfuerzo del viento y D, capa de mezcla menor de 40,34 m</th><td>0,97</td></tr>
+              <tr><th scope="row">Esfuerzo del viento y D, capa de mezcla de al menos 40,34 m</th><td>0,15</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>La asociación entre viento y D se mantuvo en las pruebas de robustez descritas en el artículo. Sin embargo, la asociación con la rapidez superficial total dependió del evento de viento intenso y no resultó robusta.</p>
+        <p>La diferencia entre niveles fue aproximadamente el doble donde la capa de mezcla era más somera. Ese contraste también coincidió con diferencias de distancia a la costa y de rapidez de las corrientes, por lo que no permite aislar un efecto causal de la capa de mezcla.</p>
+        <figure class="figura-proyecto">
+          <a href="../imagenes/oceanografia/corrientes-capa-mezcla.png" aria-label="Abrir el gráfico de corrientes y capa de mezcla en su tamaño original">
+            <img src="../imagenes/oceanografia/corrientes-capa-mezcla.png" width="2046" height="661" loading="lazy" alt="Series diarias de D en los sectores norte, centro y sur. La diferencia entre superficie y 40,34 m es generalmente mayor con capa de mezcla somera, línea azul, que con capa profunda, línea naranja.">
+          </a>
+          <figcaption>Comparación de D según la profundidad de la capa de mezcla en los tres sectores. Figura extraída del artículo; datos de Copernicus Marine. Selecciona la imagen para ampliarla.</figcaption>
+        </figure>
+        <p>El residuo superficial no geostrófico se relacionó estrechamente con D (r = 0,97) y se orientó predominantemente a la izquierda del viento. Es compatible con una respuesta superficial asociada al viento, pero el residuo también incluye otros procesos y errores de estimación.</p>
+        <p>La relación viento–D fue más fuerte en el norte y el sur que en el centro, sin demostrar estadísticamente una diferencia entre sectores. La evidencia de ondas atrapadas a la costa fue ambigua: no se identificó una velocidad de propagación coherente.</p>
+      </section>
+      <section class="seccion" aria-labelledby="limites">
+        <p class="etiqueta">04 / Alcance y limitaciones</p>
+        <h2 id="limites">Una asociación dentro de una ventana de 14 días</h2>
+        <p>Las corrientes proceden de un modelo con asimilación de datos, no de mediciones directas. El producto oceánico y el de viento comparten forzamiento atmosférico de ECMWF; por tanto, no son fuentes independientes para demostrar la relación física.</p>
+        <ul class="pasos-proyecto">
+          <li>La ventana incluye un único evento de viento intenso y no permite generalizar a otras estaciones o años. El tamaño efectivo estimado fue de aproximadamente 7,3 días.</li>
+          <li>No hubo validación independiente mediante perfiladores de corriente, derivadores o perfiles in situ en toda la ZEE.</li>
+          <li>La máscara de la ZEE es una aproximación geométrica, no el polígono oficial. Excluye las zonas sin datos a 40 m y la franja entre 20,0°S y 20,21°S.</li>
+          <li>No se cuantificaron los remolinos ni las oscilaciones inerciales, y no se evaluó el efecto directo de las señales costeras sobre las corrientes a 40 m.</li>
+          <li>Sin comparación con años neutrales o una climatología, no se puede atribuir el patrón a El Niño Costero.</li>
+        </ul>
+        <p class="nota-metodologica"><strong>Conclusión:</strong> los resultados son compatibles con una respuesta superficial no geostrófica asociada al viento y modulada por la estructura vertical. No demuestran un mecanismo único ni causalidad general para el océano peruano.</p>
+      </section>
+      <section class="seccion" aria-labelledby="creditos">
+        <p class="etiqueta">05 / Créditos</p>
+        <h2 id="creditos">Trabajo académico universitario</h2>
+        <p><strong>Autor:</strong> Cristian Rafael Huamani Arroyo.<br>
+        <strong>Facultad:</strong> Oceanografía, Pesquería, Ciencias Alimentarias y Acuicultura.<br>
+        <strong>Curso:</strong> Oceanografía Física, según la presentación.<br>
+        <strong>Docente:</strong> Dr. Federico Iriarte Ahon.<br>
+        <strong>Fecha:</strong> <time datetime="2026-09-29">29 de septiembre de 2026</time>.</p>
+        <p><strong>Título del artículo:</strong> Relación entre el esfuerzo del viento y la diferenciación vertical de las corrientes entre la superficie y 40 m en la ZEE peruana durante el 17–30 de agosto de 2026.</p>
+      </section>
+    </article>
+  </main>
+  <footer class="pie contenedor">
+    <p>Portafolio académico · Cristian R. Arroyo</p>
+    <a href="../index.html#proyectos">Volver a los proyectos ↑</a>
+  </footer>
+</body>
+</html>
