@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sensibilidad a la resolución espacial y al método de detección frente a la costa central peruana.">
+  <title>Detección satelital de frentes térmicos | Cristian R. Arroyo</title>
+  <!-- ../ sube una carpeta: reutilizamos los estilos de la portada. -->
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230e3545'/%3E%3Cpath d='M6 12h20M6 20h14' stroke='%237be0d6' stroke-width='3'/%3E%3C/svg%3E">
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+  <header class="cabecera contenedor">
+    <a class="nombre" href="../index.html">Cristian R. Arroyo<span>Portafolio científico</span></a>
+    <nav aria-label="Navegación principal">
+      <a href="../index.html">Inicio</a>
+      <a href="../index.html#sobre-mi">Sobre mí</a>
+      <a href="../index.html#proyectos">Proyectos</a>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <section class="portada portada-proyecto" aria-labelledby="titulo">
+      <div class="contenedor">
+        <p class="etiqueta">Percepción Remota y SIG · Investigación individual</p>
+        <h1 id="titulo">Detección satelital de frentes térmicos</h1>
+        <p class="introduccion">Sensibilidad a la resolución espacial y al método de detección frente a la costa central peruana.</p>
+        <p>Trabajo académico · Fecha del artículo: <time datetime="2026-10-21">21 de octubre de 2026</time></p>
+        <a class="boton" href="#documentos">Artículo y presentación ↓</a>
+      </div>
+    </section>
+    <article class="contenedor detalle-proyecto">
+      <section class="seccion" id="documentos" aria-labelledby="titulo-documentos">
+        <p class="etiqueta">Documentos del trabajo</p>
+        <h2 id="titulo-documentos">Artículo y presentación</h2>
+        <ul><li><a href="../documentos/frentes-termicos/articulo.pdf" download>Leer o descargar artículo (PDF)</a></li><li><a href="../documentos/frentes-termicos/articulo.docx" download>Descargar artículo (Word, DOCX)</a></li><li><a href="../documentos/frentes-termicos/presentacion.pdf" download>Descargar presentación (PDF)</a></li></ul>
+        <p>Archivos entregados por el autor. Esta ficha resume sus resultados; los datos originales no se recalcularon para preparar el portafolio.</p>
+      </section>
+      <section class="seccion" aria-labelledby="pregunta">
+        <p class="etiqueta">01 / Pregunta de investigación</p>
+        <h2 id="pregunta">Qué se investigó</h2>
+        <p>¿Cuánto cambia la detección de frentes térmicos al modificar la malla, el criterio de detección o el producto de temperatura superficial del mar?</p>
+      </section>
+      <section class="seccion" aria-labelledby="metodo">
+        <p class="etiqueta">02 / Datos y metodología</p>
+        <h2 id="metodo">Cómo se realizó el trabajo</h2>
+        <ol class="pasos-proyecto"><li>Cuatro ventanas de 2025, con ocho fechas reservadas para calibración y 48 para evaluación. Se utilizaron los análisis L4 de temperatura superficial MUR y OSTIA.</li>
+<li>Experimento de escala: agregación del mismo campo MUR desde 0,01° hasta 0,02°, 0,05° y 0,10°, ponderando las áreas.</li>
+<li>Experimento de criterio: comparación entre umbral alto e histéresis, compartiendo gradientes Sobel, crestas y umbral congelado.</li>
+<li>Experimento de producto: comparación MUR–OSTIA sobre malla y soporte común. Los resultados se resumieron mediante medianas por ventana y una media con pesos iguales.</li>
+</ol>
+      </section>
+      <section class="seccion" aria-labelledby="resultados">
+        <p class="etiqueta">03 / Resultados</p>
+        <h2 id="resultados">Hallazgos del artículo</h2>
+        <ul class="pasos-proyecto"><li>Al agregar MUR a 0,10°, el P90 del gradiente se redujo 22,23 % y la longitud detectada con histéresis disminuyó 84,16 %, según el resumen del artículo.</li>
+<li>La histéresis añadió 61,55 % de longitud en MUR nativo respecto del umbral alto. La longitud adicional no demuestra mayor exactitud física.</li>
+<li>La concordancia resumida entre MUR y OSTIA fue parcial, con el indicador F₁₀ = 0,441 y variación temporal. Una semilla exterior pudo modificar detecciones regionales sin cambiar sus gradientes locales.</li>
+</ul>
+      </section>
+      <section class="seccion" aria-labelledby="limites">
+        <p class="etiqueta">04 / Alcance y limitaciones</p>
+        <h2 id="limites">Cómo interpretar los resultados</h2>
+        <p>No hubo una referencia física independiente para validar qué líneas representan mejor los frentes reales. Persisten incertidumbres sobre la representación temporal de OSTIA, la geometría celular reconstruida y el muestreo restringido. La región principal se limita a 20–200 km de costa; los denominadores deben considerar las detecciones ausentes.</p>
+        <p class="nota-metodologica">La robustez descrita es operacional: muestra sensibilidad del procedimiento y concordancia entre productos. Menor longitud detectada no implica desaparición física de frentes, y el estudio no valida una predicción de hábitat pesquero.</p>
+      </section>
+      <section class="seccion" aria-labelledby="creditos">
+        <p class="etiqueta">05 / Créditos</p>
+        <h2 id="creditos">Trabajo académico universitario</h2>
+        <p><strong>Autor:</strong> Cristian Rafael Huamani Arroyo.<br>
+        <strong>Universidad:</strong> Universidad Nacional Federico Villarreal.<br>
+        <strong>Curso:</strong> Percepción Remota y SIG.<br>
+        <strong>Docente:</strong> Dr. Federico Iriarte Ahon.</p>
+        <p><strong>Título del artículo:</strong> Robustez de la detección satelital de frentes térmicos superficiales frente al Perú: sensibilidad a la resolución espacial y al método de detección.</p>
+      </section>
+    </article>
+  </main>
+  <footer class="pie contenedor">
+    <p>Portafolio académico · Cristian R. Arroyo</p>
+    <a href="../index.html#proyectos">Volver a los proyectos ↑</a>
+  </footer>
+</body>
+</html>
